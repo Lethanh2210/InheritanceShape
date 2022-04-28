@@ -15,34 +15,28 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Circle = void 0;
-var Shape_1 = require("./Shape");
-var Circle = /** @class */ (function (_super) {
-    __extends(Circle, _super);
-    function Circle(color, filled, radius) {
-        var _this = _super.call(this, color, filled) || this;
-        _this._radius = radius;
+exports.Cylinder = void 0;
+var Circle_1 = require("./Circle");
+var Cylinder = /** @class */ (function (_super) {
+    __extends(Cylinder, _super);
+    function Cylinder(color, filled, radius, height) {
+        var _this = _super.call(this, color, filled, radius) || this;
+        _this._height = height;
         return _this;
     }
-    Object.defineProperty(Circle.prototype, "radius", {
+    Object.defineProperty(Cylinder.prototype, "height", {
         get: function () {
-            return this._radius;
+            return this._height;
         },
         set: function (value) {
-            this._radius = value;
+            this._height = value;
         },
         enumerable: false,
         configurable: true
     });
-    Circle.prototype.getArea = function () {
-        return this.radius * this.radius * Math.PI;
+    Cylinder.prototype.getV = function () {
+        return this.height * _super.prototype.getArea.call(this);
     };
-    Circle.prototype.getPeri = function () {
-        return 2 * this.radius * Math.PI;
-    };
-    Circle.prototype.toString = function () {
-        return "A Circle with radius= ".concat(this.radius, ", which is a subclass of Shape");
-    };
-    return Circle;
-}(Shape_1.Shape));
-exports.Circle = Circle;
+    return Cylinder;
+}(Circle_1.Circle));
+exports.Cylinder = Cylinder;

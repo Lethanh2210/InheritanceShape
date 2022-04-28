@@ -1,6 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Square_1 = require("./Square");
+var Cylinder_1 = require("./Cylinder");
 var square = new Square_1.Square("Blue", true, 10);
 console.log(square);
 console.log(square.toString());
+var cycle = new Cylinder_1.Cylinder('Red', true, 10, 10);
+var result = cycle.getV().toFixed(2);
+console.log(result);

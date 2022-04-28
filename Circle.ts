@@ -16,11 +16,11 @@ export class Circle extends Shape {
         this._radius = value;
     }
 
-    getArea(){
-        return (this.radius * this.radius * Math.PI).toFixed(2);
+    getArea() : number{
+        return this.radius * this.radius * Math.PI;
     }
-    getPeri(){
-        return (2*this.radius*Math.PI).toFixed(2);
+    getPeri() : number{
+        return 2*this.radius*Math.PI;
     }
 
     toString(): string {
